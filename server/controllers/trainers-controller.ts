@@ -38,18 +38,18 @@ exports.trainersCreate = async (req: { body: { name: any; element: any; city: an
 }
 
 // Remove specific trainer
-exports.trainersDelete = async (req: { body: { id: any } }, res: { json: (arg0: { message: string }) => void }) => {
+exports.trainersDelete = async (req: { params: { id: any } }, res: { json: (arg0: { message: string }) => void }) => {
   // Find specific trainer in the database and remove it
   knex('trainers')
-    .where('id', req.body.id) // find correct record based on id
+    .where('id', req.params.id) // find correct record based on id
     .del() // delete the record
     .then(() => {
       // Send a success message in response
-      res.json({ message: `trainer ${req.body.id} deleted.` })
+      res.json({ message: `trainer ${req.params.id} deleted.` })
     })
     .catch((err: any) => {
       // Send a error message in response
-      res.json({ message: `There was an error deleting ${req.body.id} trainer: ${err}` })
+      res.json({ message: `There was an error deleting ${req.params.id} trainer: ${err}` })
     })
 }
 

@@ -27,7 +27,7 @@ export const Trainerdirectory = () => {
   const fetchTrainers = async () => {
     // Send GET request to 'trainers/all' endpoint
     axios
-      .get('http://localhost:4001/trainers/all')
+      .get('http://localhost:4001/trainers')
       .then(response => {
         // Update the trainers state
         setTrainers(response.data)
@@ -50,7 +50,7 @@ export const Trainerdirectory = () => {
   const handleTrainerCreate = () => {
     // Send POST request to 'trainers/create' endpoint
     axios
-      .post('http://localhost:4001/trainers/create', {
+      .post('http://localhost:4001/trainers', {
         name: name,
         element: element,
         city: city,
@@ -84,7 +84,7 @@ export const Trainerdirectory = () => {
   const handleTrainerRemove = (id: number, element: string) => {
     // Send PUT request to 'trainers/delete' endpoint
     axios
-      .put('http://localhost:4001/trainers/delete', { id: id })
+      .delete(`http://localhost:4001/trainers/${id}`, )
       .then(() => {
         console.log(`Trainer ${element} removed.`)
 
