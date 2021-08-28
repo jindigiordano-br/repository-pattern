@@ -16,5 +16,7 @@ router.delete('/:id', trainersRoutes.trainersDelete)
 
 router.put('/reset', trainersRoutes.trainersReset)
 
+router.get('/:id', trainersRoutes.trainersRead)
+
 // Export router
 module.exports = router

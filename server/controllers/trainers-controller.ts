@@ -69,3 +69,17 @@ exports.trainersReset = async (req: any, res: { json: (arg0: { message: string }
       res.json({ message: `There was an error resetting trainer list: ${err}.` })
     })
 }
+
+// Retrieve single trainer
+exports.trainersRead = async (req: any, res: { json: (arg0: { message: string }) => void }) => {
+  knex
+    .select('*') // select all records
+    .from('trainers')
+    .where('id', req.params.id)
+    .then((userData: any) => {
+      res.json(userData)
+    })
+    .catch((err: any) => {
+      res.json({ message: `There was an error retrieving trainer ${req.params.id}: ${err}` })
+    })
+}
