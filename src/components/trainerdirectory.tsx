@@ -108,8 +108,7 @@ export const Trainerdirectory = () => {
   }
 
   return (
-    <div className="trainer-list-wrapper">
-      {/* Form for creating new trainer */}
+    <>
       <div className="trainer-list-form">
         <div className="form-wrapper" onSubmit={handleTrainerSubmit}>
           <div className="form-row">
@@ -147,6 +146,6 @@ export const Trainerdirectory = () => {
       {trainers.length > 0 && (
         <button className="btn btn-reset" onClick={handleListReset}>Reset trainers list.</button>
       )}
-    </div>
+    </>
   )
 }

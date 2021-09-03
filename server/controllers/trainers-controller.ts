@@ -77,7 +77,8 @@ exports.trainersRead = async (req: any, res: { json: (arg0: { message: string })
     .from('trainers')
     .where('id', req.params.id)
     .then((userData: any) => {
-      res.json(userData)
+      console.log(userData)
+      res.json(userData[0])
     })
     .catch((err: any) => {
       res.json({ message: `There was an error retrieving trainer ${req.params.id}: ${err}` })
