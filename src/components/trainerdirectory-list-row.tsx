@@ -9,7 +9,7 @@ interface TrainerDirectoryListRowUI {
     name: string;
     element: string;
     city: string;
-    favorite: string;
+    pokemon: string;
   }
   handleTrainerRemove: (id: number, element: string) => void;
 }
@@ -34,7 +34,7 @@ export const TrainerDirectoryListRow = (props: TrainerDirectoryListRowUI) => (
     </td>
 
     <td className="table-item">
-      {props.trainer.favorite}
+      {props.trainer.pokemon}
     </td>
 
     <td className="table-item">

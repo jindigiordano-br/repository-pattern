@@ -14,7 +14,7 @@ export const Trainerdirectory = () => {
   const [name, setName] = useState('')
   const [element, setElement] = useState('')
   const [city, setCity] = useState('')
-  const [favorite, setFavorite] = useState('')
+  const [pokemon, setPokemon] = useState('')
   const [trainers, setTrainers] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -43,7 +43,7 @@ export const Trainerdirectory = () => {
     setName('')
     setElement('')
     setCity('')
-    setFavorite('')
+    setPokemon('')
   }
 
   // Create new trainer
@@ -54,7 +54,7 @@ export const Trainerdirectory = () => {
         name: name,
         element: element,
         city: city,
-        favorite: favorite
+        pokemon: pokemon
       })
       .then(res => {
         console.log(res.data)
@@ -69,7 +69,7 @@ export const Trainerdirectory = () => {
   // Submit new trainer
   const handleTrainerSubmit = () => {
     // Check if all fields are filled
-    if (name.length > 0 && element.length > 0 && city.length > 0 && favorite.length > 0) {
+    if (name.length > 0 && element.length > 0 && city.length > 0 && pokemon.length > 0) {
       // Create new trainer
       handleTrainerCreate()
 
@@ -131,8 +131,8 @@ export const Trainerdirectory = () => {
             </fieldset>
 
             <fieldset>
-              <label className="form-label" htmlFor="favorite">Enter favorite pokemon:</label>
-              <input className="form-input" type="text" id="favorite" name="favorite" value={favorite} onChange={(e) => setFavorite(e.currentTarget.value)} />
+              <label className="form-label" htmlFor="pokemon">Enter favorite pokemon:</label>
+              <input className="form-input" type="text" id="pokemon" name="pokemon" value={pokemon} onChange={(e) => setPokemon(e.currentTarget.value)} />
             </fieldset>
           </div>
         </div>

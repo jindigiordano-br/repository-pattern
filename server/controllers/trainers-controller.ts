@@ -18,14 +18,14 @@ exports.trainersAll = async (req: any, res: { json: (arg0: { message: string }) 
 }
 
 // Create new trainer
-exports.trainersCreate = async (req: { body: { name: any; element: any; city: any; favorite: any } }, res: { json: (arg0: { message: string }) => void }) => {
+exports.trainersCreate = async (req: { body: { name: any; element: any; city: any; pokemon: any } }, res: { json: (arg0: { message: string }) => void }) => {
   // Add new trainer to database
   knex('trainers')
     .insert({ // insert new record, a trainer
       'name': req.body.name,
       'element': req.body.element,
       'city': req.body.city,
-      'favorite': req.body.favorite
+      'pokemon': req.body.pokemon
     })
     .then(() => {
       // Send a success message in response

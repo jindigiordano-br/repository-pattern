@@ -13,7 +13,7 @@ interface TrainerUI {
   name: string;
   element: string;
   city: string;
-  favorite: string;
+  pokemon: string;
 }
 
 interface TrainerDirectoryListUI {
@@ -39,7 +39,7 @@ export const TrainerDirectoryList = (props: TrainerDirectoryListUI) => {
 
         <th className="table-head-item">City</th>
 
-        <th className="table-head-item">Favorite</th>
+        <th className="table-head-item">Pokemon</th>
 
         <th className="table-head-item" />
       </tr>

@@ -25,7 +25,7 @@ knex.schema
         if (!exists) {
             // If no table exists
             // create new, with "id", "name", "element",
-            // "city" and "favorite" columns
+            // "city" and "pokemon" columns
             // and use "id" as a primary identification
             // and increment "id" with every new record (trainer)
             return knex.schema.createTable('trainers', (table: { increments: (arg0: string) => { (): any; new(): any; primary: { (): void; new(): any } }; integer: (arg0: string) => void; string: (arg0: string) => void })  => {
@@ -33,7 +33,7 @@ knex.schema
                 table.integer('name')
                 table.string('element')
                 table.string('city')
-                table.integer('favorite')
+                table.integer('pokemon')
             })
                 .then(() => {
                     // Log success message
