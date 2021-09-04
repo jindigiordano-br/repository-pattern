@@ -33,13 +33,22 @@ export const Trainer = () => {
   return (
     <div>
       <h2>{trainer.name}</h2>
-      <img></img>
+      <img src='http://example.com'></img>
       <h3>Element:</h3>
       <p>{trainer.element}</p>
       <h3>City:</h3>
-      <p>{trainer.city}</p>
+      <h4>{trainer.city}</h4>
+      <h5>Region:</h5>
+      Region from API
       <h3>Pokemon</h3>
-      <p>{trainer.pokemon}</p>
+      <h4>{trainer.pokemon}</h4>
+      <img src='http://example.com'></img>
+      <h5>Moves:</h5>
+      <ul>
+        <li>Move #1</li>
+        <li>Move #2</li>
+        <li>Move #3</li>
+      </ul>
     </div>
 )
 }
